@@ -1,0 +1,188 @@
+*,
+::after,
+::before
+{
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+            /* color variables */
+:root{
+    /* primary colors */
+    --dark-cyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+    
+    /* neutral colors */
+
+    --very-darkblue: hsl(212, 21%, 14%);
+    --dark-grayish: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+}
+
+            /* fonts */
+
+/* montserrat-500 - latin */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./fonts/montserrat-v25-latin/montserrat-v25-latin-500.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('./fonts/montserrat-v25-latin/montserrat-v25-latin-500.eot') format('embedded-opentype'), /* IE6-IE8 */
+         url('./fonts/montserrat-v25-latin/montserrat-v25-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+         url('./fonts/montserrat-v25-latin/montserrat-v25-latin-500.woff') format('woff'), /* Modern Browsers */
+         url('./fonts/montserrat-v25-latin/montserrat-v25-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('./fonts/montserrat-v25-latin/montserrat-v25-latin-500.svg') format('svg'); /* Legacy iOS */
+}
+
+/* montserrat-700 - latin */
+@font-face {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./fonts/montserrat-v25-latin/montserrat-v25-latin-500.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('./fonts/montserrat-v25-latin/montserrat-v25-latin-500.eot') format('embedded-opentype'), /* IE6-IE8 */
+         url('./fonts/montserrat-v25-latin/montserrat-v25-latin-500.woff2') format('woff2'), /* Super Modern Browsers */
+         url('./fonts/montserrat-v25-latin/montserrat-v25-latin-500.woff') format('woff'), /* Modern Browsers */
+         url('./fonts/montserrat-v25-latin/montserrat-v25-latin-500.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('./fonts/montserrat-v25-latin/montserrat-v25-latin-500.svg') format('svg'); /* Legacy iOS */
+}
+
+/* fraunces-700 - latin */
+@font-face {
+    font-family: 'Fraunces';
+    font-style: normal;
+    font-weight: 700;
+    src: url('./fonts/fraunces-v24-latin/fraunces-v24-latin-700.eot'); /* IE9 Compat Modes */
+    src: local(''),
+         url('./fonts/fraunces-v24-latin/fraunces-v24-latin-700.eot') format('embedded-opentype'), /* IE6-IE8 */
+         url('./fonts/fraunces-v24-latin/fraunces-v24-latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+         url('./fonts/fraunces-v24-latin/fraunces-v24-latin-700.woff') format('woff'), /* Modern Browsers */
+         url('./fonts/fraunces-v24-latin/fraunces-v24-latin-700.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('./fonts/fraunces-v24-latin/fraunces-v24-latin-700.svg') format('svg'); /* Legacy iOS */
+}
+
+
+
+body{
+    height: 100vh;
+    background: var(--cream);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* global styles */
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+/* card */
+
+/* mobile */
+
+.card{
+    background-color: var(--white);
+    width: 94%;
+    /*margin: 0 auto;*/
+    border-radius: 0 0 10px 10px;
+}
+
+.image-container{
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-image: url(./images/image-product-desktop.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+        /* text container */
+
+.text-container{
+    width: 88%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.product-type{
+    display: block;
+    margin-top: 1.34rem;
+    letter-spacing: 6px;
+    font-family: 'Montserrat';
+    color: var(--dark-grayish);   
+}
+
+h1{
+    font-family: 'Fraunces';
+}
+
+.description{
+    color: var(--dark-grayish);
+    line-height: 1.5;
+    font-size: 1.14rem;
+}
+
+.price{
+    color: var(--dark-cyan);
+    font-family: 'Fraunces';
+    font-size: 2rem;
+}
+
+.price::after{
+    content: "$169.99";
+    font-family: 'Montserrat';
+    font-size: 14px;
+    font-weight: lighter;
+    color: var(--dark-grayish);
+    text-decoration: line-through;
+    vertical-align: super;
+}
+
+button{
+    width: 100%;
+    height: 3rem;
+    color: var(--white);
+    background-color: var(--dark-cyan);
+    border-radius: 10px;
+    margin-bottom: 1.34rem;
+}
+
+/* between mobile L and tablet */
+
+@media only screen and (min-width: 425px) and (max-width: 746px) {
+    .card{
+        max-width: 400px;
+    }
+}
+
+/* tablet */
+
+@media only screen and (min-width: 746px) {
+    .card{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 600px;
+    }
+
+    .image-container{
+        height: auto;
+        background-image: url(./images/image-product-desktop.jpg);
+        background-position: center;
+        background-size: cover;
+        background-position: center;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 10px;
+    }
+
+    .card{
+        border-top-right-radius: 10px;
+    }
+
+}
+
