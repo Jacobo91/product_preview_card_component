@@ -152,6 +152,18 @@ button{
     margin-bottom: 1.34rem;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
+button:focus{
+    background: blue;
+}
+
+button:active{
+    transform: scale(1.1);
+}
+
 /* between mobile L and tablet */
 
 @media only screen and (min-width: 425px) and (max-width: 746px) {
