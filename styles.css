@@ -86,7 +86,6 @@ body{
 .card{
     background-color: var(--white);
     width: 94%;
-    /*margin: 0 auto;*/
     border-radius: 0 0 10px 10px;
 }
 
